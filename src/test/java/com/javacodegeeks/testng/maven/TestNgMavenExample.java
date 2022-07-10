@@ -4,6 +4,7 @@ import java.time.LocalTime;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -22,6 +23,13 @@ public class TestNgMavenExample {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://freecrm.com");
-		System.out.println("Completed=============");
+		System.out.println("Navigate to Defaultpage");
+			PageFactory.initElements(driver,LoginPageObjects.class);
+			LoginPageObjects.login.click();
+			LoginPageObjects.userNameTxtBox.sendKeys("praveendev404@gmail.com");
+			LoginPageObjects.passwordTxtBox.sendKeys("Test1111$");
+			LoginPageObjects.loginBtn.click();
+			
+		}
 	}
-}
+
