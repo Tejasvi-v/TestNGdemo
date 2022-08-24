@@ -5,7 +5,8 @@
     <classes>
       <class name="com.javacodegeeks.testng.maven.TestNgMavenExample">
         <methods>
-          <include name="exampleOfTestNgMaven"/>
+          <include name="companiespageobjects"/>
+          <include name="browserClose"/>
           <include name="openBrowser"/>
         </methods>
       </class> <!-- com.javacodegeeks.testng.maven.TestNgMavenExample -->
