@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPageObjects {
-	@FindBy(xpath="//li[@class='active']/a")
+	@FindBy(xpath="//a[text()='Login']")
 	public static WebElement login;
 	
 	@FindBy(xpath="//input[@name='email']")
