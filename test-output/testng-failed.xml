@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.javacodegeeks.testng.maven.TestNgMavenExample">
+      <class name="com.demo.test.TestNgMavenExample">
         <methods>
-          <include name="contactspageobjects"/>
-          <include name="browserClose"/>
           <include name="openBrowser"/>
+          <include name="calenderpage"/>
         </methods>
-      </class> <!-- com.javacodegeeks.testng.maven.TestNgMavenExample -->
+      </class> <!-- com.demo.test.TestNgMavenExample -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

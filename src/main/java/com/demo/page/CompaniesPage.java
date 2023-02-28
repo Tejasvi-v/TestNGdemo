@@ -1,9 +1,17 @@
-package com.javacodegeeks.testng.maven;
+package com.demo.page;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CompaniesPageObjects {
+import com.demo.base.TestBase;
+
+public class CompaniesPage extends TestBase
+{
 
 	@FindBy(xpath="//a[contains(@href,'companies')]/span")
 	public static WebElement Companiesmenu;
@@ -62,7 +70,7 @@ public class CompaniesPageObjects {
 	@FindBy(xpath="//input[@name='industry']")
 	public static WebElement IndustrytxtBox;
 	
-	@FindBy(xpath="//input[@name='num_employees']")
+	@FindBy (xpath="//input[@name='num_employees']")
 	public static WebElement NoofemployeestxtBox;
 	
 	@FindBy(xpath="//input[@name='symbol']")
@@ -92,5 +100,46 @@ public class CompaniesPageObjects {
 	@FindBy(xpath="//input[@name='fileField']")
 	public static WebElement ImagetxtBox;
 	
+	
+	public static void companies() {
+		driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+		WebDriverWait wait =new WebDriverWait (driver, 10000);
+		wait.until(ExpectedConditions.elementToBeClickable(CompaniesPage.Companiesmenu));
+		CompaniesPage.Companiesmenu.click();
+		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+		CompaniesPage.CompaniescreateBtn.click();
+		CompaniesPage.NametxtBox.sendKeys("Tejasvi");
+		CompaniesPage.WebsitetxtBox.sendKeys("https://www.facebook.com");
+		CompaniesPage.AddresstxtBox.sendKeys("Edison");
+		CompaniesPage.CitytxtBox.sendKeys("NJ");
+		CompaniesPage.StatetxtBox.sendKeys("New York");
+		CompaniesPage.PostalcodetxtBox.sendKeys("61093");
+		CompaniesPage.AddiconBtn.click();
+		CompaniesPage.AddresstxtBtn1.sendKeys("Ohio");
+		CompaniesPage.CitytxtBox1.sendKeys("DC");
+		CompaniesPage.StatetxBox1.sendKeys("Calforina");
+		CompaniesPage.PostalcodetxtBox1.sendKeys("64554");
+		CompaniesPage.NumbertxtBox.sendKeys("734543534");
+		CompaniesPage.HometxtBox.sendKeys("734534534");
+		CompaniesPage.DescriptiontxtBox.sendKeys("Updated the New Companies for data restored");
+		CompaniesPage.TwittertxtBox.sendKeys("Tejasviteju_96");
+		CompaniesPage.IndustrytxtBox.sendKeys("IT Technology");
+		CompaniesPage.NoofemployeestxtBox.sendKeys("3000");
+		CompaniesPage.symboltxtBox.sendKeys("@#@!");
+		CompaniesPage.AnnualRevenuetxtBox.sendKeys("100 Million");
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("var ele=arguments[0]; ele.innerHTML = 'High';",
+				CompaniesPage.PrioritydropdownBox);
+		executor.executeScript("var ele=arguments[0]; ele.innerHTML = 'Active';",
+				CompaniesPage.StatusdropdownBox);
+		executor.executeScript("var ele=arguments[0]; ele.innerHTML = 'Partner';",
+				CompaniesPage.SourcedropdownBox);
+		executor.executeScript("var ele=arguments[0]; ele.innerHTML = 'Client';",
+				CompaniesPage.CategorydropdownBox);
+		CompaniesPage.VATNumbertxtBox.sendKeys("46346346");
+		CompaniesPage.IdentifiertxtBox.sendKeys("New Company");
+		CompaniesPage.ImagetxtBox.sendKeys("C://Users//Teju//Pictures//Saved Pictures//FreeCRM.png");
+		driver.close();
+	}
 	
 }
