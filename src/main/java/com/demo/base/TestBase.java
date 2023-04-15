@@ -7,10 +7,12 @@ public class TestBase {
 
 	public static WebDriver driver;
 	
-	public void browseropen() {
-	System.setProperty("webdriver.chrome.driver", "D://chromedriver//chromedriver.exe");
-		driver = new ChromeDriver();
+	public void browseropen() throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "D://chromedriver_win32//chromedriver.exe");
+	driver = new ChromeDriver();
 	driver.manage().window().maximize();
-	driver.get("https://ui.freecrm.com");
+	driver.navigate().to("https://ui.freecrm.com");
+	Thread.sleep(2000);
+	driver.navigate().refresh();
 }
 }

@@ -26,13 +26,14 @@ public class LoginPage extends TestBase
 	public static WebElement loginBtn;
 	
 	
-	public static void Login()
+	public static void Login() throws InterruptedException
 	{
 		WebDriverWait wait =new WebDriverWait(driver, 20000);
 		/*wait.until(ExpectedConditions.elementToBeClickable(LoginPage.login));
 		LoginPage.login.click();*/
 		LoginPage.userNameTxtBox.sendKeys("praveendev404@gmail.com");
 		LoginPage.passwordTxtBox.sendKeys("Test1111$");
+		Thread.sleep(2000);
 		LoginPage.loginBtn.click();
 	}
 	

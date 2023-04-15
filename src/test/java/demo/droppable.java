@@ -11,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 public class droppable {
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "D://chromedriver//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D://chromedriver_win32//chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		String URL="https://demoqa.com/droppable/";

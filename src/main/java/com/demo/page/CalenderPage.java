@@ -40,7 +40,10 @@ public class CalenderPage extends TestBase{
 	public static WebElement alldaycheckbox;
 	
 	@FindBy(xpath="//div[@name='channels']/div/div/span[text()='Email']")
-	public static WebElement AlertVia;
+	public static WebElement AlertViaEmail;
+	
+	@FindBy(xpath="//div[@name='channels']/div/div/span[text()='SMS']")
+	public static WebElement AlertViaSMS;
 	
 	@FindBy(xpath="//div[@name='channels']/i[@class='dropdown icon']")
 	public static WebElement dropdownicon;
@@ -62,6 +65,7 @@ public class CalenderPage extends TestBase{
 		CalenderPage.calendermenu.click();
 		driver.manage().timeouts().implicitlyWait(5000,TimeUnit.MILLISECONDS);
 		CalenderPage.calendernewbtn.click();
+		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
 		CalenderPage.cancelicon.click();
 		driver.manage().timeouts().implicitlyWait(6000, TimeUnit.MILLISECONDS);
 		CalenderPage.calendernewbtn1.click();
@@ -72,7 +76,8 @@ public class CalenderPage extends TestBase{
 		executor.executeScript("document.getElementsByName('all_day')[0].click();");
 		executor.executeScript("window.scrollBy(0,1000)");
 		CalenderPage.dropdownicon.click();
-		CalenderPage.AlertVia.click();
+		CalenderPage.AlertViaEmail.click();
+		CalenderPage.AlertViaSMS.click();
 		CalenderPage.ReminderTimetxtBox.sendKeys("40");
 		CalenderPage.IdentifiertxtBox.sendKeys("Time Sheet");
 		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);

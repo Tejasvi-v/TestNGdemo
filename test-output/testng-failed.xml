@@ -3,12 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.demo.test.TestNgMavenExample">
+      <class name="demo.mutiplewindow">
         <methods>
-          <include name="openBrowser"/>
-          <include name="calenderpage"/>
+          <include name="beforeMethod"/>
+          <include name="testSwitchToOrginalWindows"/>
+          <include name="testSwitchToPopupWindows"/>
+          <include name="testTypeURLNewTab"/>
+          <include name="afterMethod"/>
+          <include name="testSwitchWindows"/>
         </methods>
-      </class> <!-- com.demo.test.TestNgMavenExample -->
+      </class> <!-- demo.mutiplewindow -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

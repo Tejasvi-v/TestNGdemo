@@ -38,13 +38,15 @@ CampaignPage campaignPage;
 		LocalTime myObj = LocalTime.now();
 		System.out.println(myObj);
 		browseropen();
-		//String title=driver.getTitle();
+		String title=driver.getTitle();
+		System.out.println(title);
 		PageFactory.initElements(driver, LoginPage.class);
 		loginPage.Login();
-		//String currentURL=driver.getCurrentUrl();
-		//System.out.println(currentURL);
-		/*String pageSource=driver.getPageSource();
-		System.out.println(pageSource);*/
+		Thread.sleep(2000);
+		String currentURL=driver.getCurrentUrl();
+		System.out.println(currentURL);
+		String pageSource=driver.getPageSource();
+		System.out.println(pageSource);
 		}
 
 	@Test (priority=1)
